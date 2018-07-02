@@ -8,9 +8,10 @@ public with sharing class DemoController {
      * Set the contact for the page using the lastName parameter, if there is one
      */
     public DemoController(ApexPages.StandardController controller) {
+              System.debug('test code');
         // Get the last name from the url
         String lastName = ApexPages.currentPage().getParameters().get('lastName');
-
+        System.debug('test code');
         if (lastName != null) {
             // Query the object
             Contact theContact = [SELECT ID FROM Contact WHERE LastName = :lastName LIMIT 1];
